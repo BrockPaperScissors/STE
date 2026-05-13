@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject leftEndpoint;
+    public GameObject rightEndpoint;
+    public float platformSpeed = 10f;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject targetEndpoint;
+
+    public void MoveSideToSide(GameObject target, int side)
     {
-        
+        if (side == 1)
+        {
+
+            transform.Translate(Vector2.left * Time.deltaTime * platformSpeed);
+        }
+        else
+        {
+            transform.Translate(Vector2.right * Time.deltaTime * platformSpeed);
+        }
     }
 }
