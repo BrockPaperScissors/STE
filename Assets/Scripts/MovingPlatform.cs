@@ -4,13 +4,18 @@ public class MovingPlatform : MonoBehaviour
 {
     public GameObject leftEndpoint;
     public GameObject rightEndpoint;
+
+    public int target = 0;
     public float platformSpeed = 10f;
 
-    public GameObject targetEndpoint;
-
-    public void MoveSideToSide(GameObject target, int side)
+    void Update()
     {
-        if (side == 1)
+        MoveSideToSide(target);
+    }
+
+    public void MoveSideToSide(int target)
+    {
+        if (target == 1)
         {
 
             transform.Translate(Vector2.left * Time.deltaTime * platformSpeed);
