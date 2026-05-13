@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private bool isGrounded = false;
     private bool canGrapple = true;
     private bool canMove = true;
+    public GameObject closestInteractable;
     private Vector2 playerPos;
     private GameObject castPoint;
     private Vector2 clickPos = new Vector2(0, 0);
