@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private Vector2 clickPos = new Vector2(0, 0);
     private Vector2 grappleDir;
 
+    public bool hasItem = false;
+
 
 
     void Start()
@@ -29,6 +31,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.F))
+        {
+            if (closestInteractable)
+            {
+                hasItem = true;
+            }
+        }
         if (canMove)
         {
 
