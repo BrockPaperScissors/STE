@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f507338df0fd2bd4fa58d3c36a680313
+  - enabled: 1
+    path: Assets/Scenes/Scene1.unity
+    guid: b858d26f53369472eaebb5589b07ee0f
+  - enabled: 1
+    path: Assets/Scenes/GrappleCaves.unity
+    guid: 33c558520affc0e4c96168c4c1d13bf2
+  - enabled: 1
+    path: Assets/Scenes/FallingFloors.unity
+    guid: 9daf69f9a42d7544c8e55494efbbdeae
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
