@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private GameManager gameManagerScript;
     private Rigidbody2D rb;
     public float moveSpeed = 10;
+    private int moveDirection;
     public float jumpForce = 100f;
     public float grappleSpeed = 20f;
     private bool isGrounded = false;
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
     private Vector2 grappleDir;
     public bool hasItem = false;
     public bool hasRocketItem = false;
+    public Animator playerAnim;
+    public SpriteRenderer playerSprite;
 
 
 
@@ -69,11 +72,13 @@ public class Player : MonoBehaviour
 
             if (Input.GetKey(KeyCode.D))
             {
+                moveDirection = 1;
                 transform.position += (Vector3.right * Time.deltaTime) * moveSpeed;
             }
 
             if (Input.GetKey(KeyCode.A))
             {
+                moveDirection = -1;
                 transform.position += (Vector3.left * Time.deltaTime) * moveSpeed;
             }
 
@@ -93,6 +98,34 @@ public class Player : MonoBehaviour
                 GrappleMove();
             }
         }
+
+        if (moveDirection > 0)
+        {
+            playerSprite.flipX = true;
+            playerAnim.SetBool("Walking", true);
+
+        }
+        else if (moveDirection < 0)
+        {
+            playerAnim.SetBool("Walking", true);
+
+            playerSprite.flipX = false;
+        }
+        else
+        {
+            playerAnim.SetBool("Walking", false);
+        }
+
+
+        if (isGrounded)
+        {
+            moveDirection = 0;
+        }
+    }
+
+    void FixedUpdate()
+    {
+
 
         if (!canGrapple)
         {
