@@ -10,7 +10,7 @@ public class AnchorEndpoint : MonoBehaviour
     void Start()
     {
         movingScript = movingPlatform.GetComponent<MovingPlatform>();
-        movingScript.MoveSideToSide(1);
+        // movingScript.MoveSideToSide(1);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
