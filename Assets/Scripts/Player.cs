@@ -121,6 +121,10 @@ public class Player : MonoBehaviour
         {
             moveDirection = 0;
         }
+        else
+        {
+            playerAnim.SetBool("Walking", false);
+        }
     }
 
     void FixedUpdate()
