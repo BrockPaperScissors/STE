@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
                 {
                     hasItem = true;
                     Debug.Log("closest item" + closestInteractable.gameObject.transform.GetChild(0).gameObject.name);
+                    gameManagerScript.OnChestOpen();
                 }
 
                 if (closestInteractable.CompareTag("ShopKeeper"))
@@ -52,9 +53,14 @@ public class Player : MonoBehaviour
 
                 if (closestInteractable.CompareTag("Rocket"))
                 {
-                    hasRocketItem = false;
-                    gameManagerScript.rocketNoTop.SetActive(false);
-                    gameManagerScript.rocketTop.SetActive(true);
+                    if (hasRocketItem)
+                    {
+
+                        hasRocketItem = false;
+                        gameManagerScript.rocketNoTop.SetActive(false);
+                        gameManagerScript.rocketTop.SetActive(true);
+                        gameManagerScript.OnRocketFinished();
+                    }
                 }
             }
         }

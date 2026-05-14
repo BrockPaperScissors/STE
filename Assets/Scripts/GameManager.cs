@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,14 +14,40 @@ public class GameManager : MonoBehaviour
 
     public GameObject rocketTop;
     public GameObject rocketNoTop;
+    [SerializeField]
+    private Animator rocketAnimator;
+    [SerializeField]
+    private GameObject rocketContainer;
 
+
+
+    IEnumerator PlayEndingAnimation()
+    {
+        rocketAnimator.SetTrigger("Play");
+
+        float animLength = rocketAnimator.GetCurrentAnimatorStateInfo(0).length;
+
+        yield return new WaitForSeconds(animLength);
+
+        SceneManager.LoadScene("EndingWin");
+
+
+    }
     void Start()
     {
-        chestSprite = interactable.GetComponent<SpriteRenderer>();
+        chestSprite = interactable.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        rocketAnimator = rocketContainer.GetComponent<Animator>();
+
     }
 
     public void OnChestOpen()
     {
+        Debug.Log("Opening chest");
         chestSprite.sprite = openChest;
+    }
+
+    public void OnRocketFinished()
+    {
+        StartCoroutine(PlayEndingAnimation());
     }
 }
