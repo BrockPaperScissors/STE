@@ -11,7 +11,7 @@ public class ItemContainer : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collider.gameObject.name + " entered range of" + this.gameObject.name);
+
 
         if (collider.gameObject.CompareTag("Player"))
         {
@@ -21,7 +21,7 @@ public class ItemContainer : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        Debug.Log(collider.gameObject.name + " has exited range of " + this.gameObject.name);
+
 
         if (collider.gameObject.CompareTag("Player"))
         {
