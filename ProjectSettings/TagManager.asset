@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Interactable
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -16,10 +17,10 @@ TagManager:
   - Ground
   - Player
   - Interactable
-  - 
-  - 
-  - 
-  - 
+  - Platform
+  - Anchors
+  - FloatingInteractable
+  - Obstacle
   - 
   - 
   - 
