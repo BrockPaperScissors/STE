@@ -54,33 +54,6 @@ public class Player : MonoBehaviour
 
             if (Input.GetMouseButtonDown(1) && isGrounded)
             {
-                // Debug.Log("right mouse button down clicked");
-                // clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-                // playerPos = (Vector2)castPoint.transform.position;
-                // grappleDir = (clickPos - playerPos).normalized;
-
-                // int groundMask = LayerMask.GetMask("Ground");
-                // RaycastHit2D hit = Physics2D.Raycast(clickPos, playerPos, 100f, groundMask);
-
-                // if (hit.collider)
-                // {
-                //     Debug.Log("Hit  " + hit.collider.gameObject.name);
-
-                //     switch (hit.collider.gameObject.tag)
-                //     {
-                //         case ("Ground"):
-
-                //             Debug.Log("Grappling hit ground object");
-                //             canGrapple = false;
-                //             isGrounded = false;
-                //             canMove = false;
-
-                //             break;
-                //         default:
-                //             break;
-                //     }
-                // }
 
                 GrappleMove();
             }
