@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    public GameObject gameManager;
+    private GameManager gameManagerScript;
     private Rigidbody2D rb;
     public float moveSpeed = 10;
     public float jumpForce = 100f;
@@ -17,8 +19,8 @@ public class Player : MonoBehaviour
     private GameObject castPoint;
     private Vector2 clickPos = new Vector2(0, 0);
     private Vector2 grappleDir;
-
     public bool hasItem = false;
+    public bool hasRocketItem = false;
 
 
 
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         castPoint = GameObject.Find("CastPoint");
+        gameManagerScript = gameManager.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -35,7 +38,24 @@ public class Player : MonoBehaviour
         {
             if (closestInteractable)
             {
-                hasItem = true;
+                if (closestInteractable.CompareTag("Interactable"))
+                {
+                    hasItem = true;
+                    Debug.Log("closest item" + closestInteractable.gameObject.transform.GetChild(0).gameObject.name);
+                }
+
+                if (closestInteractable.CompareTag("ShopKeeper"))
+                {
+                    hasRocketItem = true;
+                    hasItem = false;
+                }
+
+                if (closestInteractable.CompareTag("Rocket"))
+                {
+                    hasRocketItem = false;
+                    gameManagerScript.rocketNoTop.SetActive(false);
+                    gameManagerScript.rocketTop.SetActive(true);
+                }
             }
         }
         if (canMove)

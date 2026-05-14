@@ -2,15 +2,24 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField]
+    private SpriteRenderer chestSprite;
+    [SerializeField]
+    private GameObject interactable;
+
+    [SerializeField]
+    private Sprite openChest;
+
+    public GameObject rocketTop;
+    public GameObject rocketNoTop;
+
     void Start()
     {
-        
+        chestSprite = interactable.GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnChestOpen()
     {
-        
+        chestSprite.sprite = openChest;
     }
 }
