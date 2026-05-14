@@ -21,28 +21,28 @@ public class GameManager : MonoBehaviour
     private GameObject rocketContainer;
     [SerializeField]
     private GameObject mainCam;
-    [SerializeField]
-    private GameObject rocketCam;
+
+    public GameObject playerObj;
 
 
+
+
+    void Start()
+    {
+        chestSprite = interactable.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        rocketAnimator = rocketContainer.GetComponent<Animator>();
+        mainCam = playerObj.transform.GetChild(0).gameObject;
+
+    }
 
     IEnumerator PlayEndingAnimation()
     {
-        mainCam.SetActive(false);
-        rocketCam.SetActive(true);
         rocketAnimator.SetTrigger("Play");
-
 
         yield return new WaitForSeconds(4.0f);
 
         SceneManager.LoadScene("EndingWin");
 
-
-    }
-    void Start()
-    {
-        chestSprite = interactable.transform.GetChild(0).GetComponent<SpriteRenderer>();
-        rocketAnimator = rocketContainer.GetComponent<Animator>();
 
     }
 
@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void OnRocketFinished()
     {
+
+        mainCam.transform.SetParent(rocketContainer.transform, false);
         StartCoroutine(PlayEndingAnimation());
     }
 }

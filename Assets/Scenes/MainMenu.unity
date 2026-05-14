@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b840d2058c40abd4d8220046dc29f157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  gameSceneName: GrappleCaves
+  gameSceneName: IntroScene
 --- !u!1 &1819327537
 GameObject:
   m_ObjectHideFlags: 0

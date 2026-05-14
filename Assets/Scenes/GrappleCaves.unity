@@ -885,10 +885,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1303743484}
   - {fileID: 815534928}
   - {fileID: 1040135438}
   - {fileID: 1267670141}
-  - {fileID: 1303743484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &805877312
@@ -2482,7 +2482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1303743484
 Transform:
   m_ObjectHideFlags: 0
@@ -3101,8 +3101,9 @@ MonoBehaviour:
   rocketNoTop: {fileID: 815534927}
   rocketAnimator: {fileID: 0}
   rocketContainer: {fileID: 805877310}
-  mainCam: {fileID: 972126789}
-  rocketCam: {fileID: 1303743487}
+  mainCam: {fileID: 972126785}
+  rocketCam: {fileID: 1303743483}
+  playerObj: {fileID: 1286867403}
 --- !u!1001 &1777279058
 PrefabInstance:
   m_ObjectHideFlags: 0
