@@ -11,7 +11,6 @@ public class Rocket : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-
         Debug.Log("Object entered Rocket radius");
         if (collider.gameObject.CompareTag("Player"))
         {

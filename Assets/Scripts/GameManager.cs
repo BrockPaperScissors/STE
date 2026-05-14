@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,16 +19,21 @@ public class GameManager : MonoBehaviour
     private Animator rocketAnimator;
     [SerializeField]
     private GameObject rocketContainer;
+    [SerializeField]
+    private GameObject mainCam;
+    [SerializeField]
+    private GameObject rocketCam;
 
 
 
     IEnumerator PlayEndingAnimation()
     {
+        mainCam.SetActive(false);
+        rocketCam.SetActive(true);
         rocketAnimator.SetTrigger("Play");
 
-        float animLength = rocketAnimator.GetCurrentAnimatorStateInfo(0).length;
 
-        yield return new WaitForSeconds(animLength);
+        yield return new WaitForSeconds(4.0f);
 
         SceneManager.LoadScene("EndingWin");
 

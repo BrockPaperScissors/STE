@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GrappleCaves.unity
     guid: 33c558520affc0e4c96168c4c1d13bf2
+  - enabled: 1
+    path: Assets/Scenes/EndingWin.unity
+    guid: 946edaf8e740c84488efc0fb4576210c
   - enabled: 0
     path: Assets/Scenes/Scene1.unity
     guid: b858d26f53369472eaebb5589b07ee0f
