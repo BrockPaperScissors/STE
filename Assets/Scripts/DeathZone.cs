@@ -7,7 +7,7 @@ public class DeathZone : MonoBehaviour
     public GameObject player;
     public Transform respawnPoint;
 
-    private void OnCollisionEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
